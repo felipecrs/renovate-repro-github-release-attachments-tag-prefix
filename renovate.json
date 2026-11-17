@@ -6,25 +6,12 @@
       "customType": "regex",
       "managerFilePatterns": ["/^install\\.ps1$/"],
       "matchStrings": [
-        "\\$UsbipTag = '(?<currentValue>[^']+)'\\s+\\$UsbipTagSha256 = '(?<currentDigest>[a-f0-9]{64})'"
+        "\\$UsbipVersion = '(?<currentValue>[^']+)'\\s+\\$UsbipSha256 = '(?<currentDigest>[a-f0-9]{64})'"
       ],
       "datasourceTemplate": "github-release-attachments",
-      "depNameTemplate": "usbip-win2-by-tag",
-      "packageNameTemplate": "vadimgrn/usbip-win2",
-      "versioningTemplate": "regex:^v\\.(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)$"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": ["/^install\\.ps1$/"],
-      "matchStrings": [
-        "\\$UsbipVersion = '(?<version>[^']+)'\\s+\\$UsbipVersionSha256 = '(?<currentDigest>[a-f0-9]{64})'"
-      ],
-      "datasourceTemplate": "github-release-attachments",
-      "depNameTemplate": "usbip-win2-by-version",
-      "packageNameTemplate": "vadimgrn/usbip-win2",
-      "currentValueTemplate": "v.{{{version}}}",
-      "versioningTemplate": "regex:^v\\.(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)$",
-      "autoReplaceStringTemplate": "$UsbipVersion = '{{{replace '^v[.]' '' newValue}}}'\n$UsbipVersionSha256 = '{{{newDigest}}}'"
+      "depNameTemplate": "vadimgrn/usbip-win2",
+      "extractVersionTemplate": "^v\\.(?<version>.+)$",
+      "versioningTemplate": "loose"
     }
   ]
 }
