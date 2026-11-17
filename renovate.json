@@ -12,18 +12,6 @@
       "depNameTemplate": "usbip-win2-by-tag",
       "packageNameTemplate": "vadimgrn/usbip-win2",
       "versioningTemplate": "regex:^v\\.(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)$"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": ["/^install\\.ps1$/"],
-      "matchStrings": [
-        "\\$UsbipVersion = '(?<currentValue>[^']+)'\\s+\\$UsbipVersionSha256 = '(?<currentDigest>[a-f0-9]{64})'"
-      ],
-      "datasourceTemplate": "github-release-attachments",
-      "depNameTemplate": "usbip-win2-by-version",
-      "packageNameTemplate": "vadimgrn/usbip-win2",
-      "extractVersionTemplate": "^v\\.(?<version>.+)$",
-      "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)$"
     }
   ]
 }
